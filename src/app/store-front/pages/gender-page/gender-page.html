@@ -1,0 +1,22 @@
+<h1 class="text-3xl font bold">All products {{ gender() }}</h1>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-2 gap-3">
+
+  @for (product of productResource.value()?.products; track $index) {
+
+    <product-card [product]="product" />
+
+  }
+  @empty {
+    <p>There are no products</p>
+  }
+
+
+</div>
+
+<app-pagination
+[pages]="productResource.value()?.pages ?? 0"
+[currentPage]="paginationService.currentPage()"
+/>
+
+

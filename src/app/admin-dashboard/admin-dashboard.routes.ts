@@ -1,18 +1,21 @@
 import { Routes } from "@angular/router";
-import { AdminLayout } from "./layouts/admin-dashboard-layout/admin-ashboard-layout";
+import { AdminLayout } from "./layouts/admin-dashboard-layout/admin-dashboard-layout";
 import { ProductAdminPage } from "./pages/product-admin-page/product-admin-page";
+import { ProductsAdminPage } from "./pages/products-admin-page/products-admin-page";
+import { IsAdminGuard } from "../auth/guards/is-admin-guard";
 
 export const adminDashboardRoutes: Routes = [{
 
   path: '',
   component: AdminLayout,
+  canMatch: [IsAdminGuard],
   children: [
     {
       path: 'products',
-      component: ProductAdminPage,
+      component: ProductsAdminPage,
     },
     {
-      path: 'product/:id',
+      path: 'products/:id',
       component: ProductAdminPage,
     },
     {

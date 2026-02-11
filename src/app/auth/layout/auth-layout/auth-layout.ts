@@ -1,13 +1,17 @@
+
 import { Component, inject, signal } from '@angular/core';
-import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterLink, RouterOutlet } from '@angular/router';
 import { filter } from 'rxjs';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-auth-layout',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, RouterLink],
   templateUrl: './auth-layout.html',
 })
 export class AuthLayout {
+
+  baseUrl = environment.BaseUrl;
 
   constructor() {
     this.route.events

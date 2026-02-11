@@ -23,10 +23,10 @@
           </a>
         </li>
 
-        <li><a>Item 3</a></li>
+
       </ul>
     </div>
-    <a routerLink="/" class="btn btn-ghost text-xl font-montserrat">
+    <a routerLink="/admin" class="btn btn-ghost text-xl font-montserrat">
       Teslo
       <span class="text-secondary">| Shop</span>
     </a>
@@ -51,6 +51,11 @@
     </ul>
   </div>
   <div class="navbar-end gap-4">
+
+    @if(authService.isAdmin()) {
+      <a routerLink="/admin" class="btn btn-accent">Admin</a>
+
+    }
 
     @if (authService.authStatus() === 'authenticated') {
       <button class="btn btn-ghost">

@@ -16,7 +16,7 @@ const baseUrl = environment.BaseUrl;
     const image = value.at(0);
 
     if (!image) {
-      return './assets/images/no-image.jpg';
+      return './assets/no-image.jpg';
     }
 
     return `${baseUrl}/files/product/${image}`;

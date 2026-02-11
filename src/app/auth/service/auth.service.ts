@@ -15,6 +15,7 @@ export class AuthService {
   private _user = signal<User | null>(null);
   private _token = signal<string | null>(localStorage.getItem('token'));
 
+
   private http = inject(HttpClient);
 
   checkStatusResource = rxResource({
@@ -83,6 +84,7 @@ export class AuthService {
     this._authStatus.set('not-authenticated');
 
     localStorage.removeItem('token');
+
   }
 
   private handleAuthSuccess({ token, user }: AuthResponse) {

@@ -142,3 +142,11 @@
     <input type="file" class="file-input file-input-bordered w-full mt-4" />
   </div>
 </form>
+
+
+@if(wasSaved()) {
+  <div class="alert alert-success fixed top-4 right-10 w-50 animate-fadeIn">
+    <span>Data updated successfully</span>
+  </div>
+
+}

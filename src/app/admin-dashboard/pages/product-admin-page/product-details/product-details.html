@@ -139,7 +139,13 @@
 
     <product-carousel [images]="product().images" />
 
-    <input type="file" class="file-input file-input-bordered w-full mt-4" />
+    <input
+      type="file"
+      class="file-input file-input-bordered w-full mt-4"
+      multiple
+      accept="image/*"
+      (change)="onFilesChange($event)"
+    />
   </div>
 </form>
 

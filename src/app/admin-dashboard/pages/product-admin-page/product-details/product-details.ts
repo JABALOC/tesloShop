@@ -104,4 +104,9 @@ export class ProductDetails implements OnInit{
     }, 3000);
   }
 
+  onFilesChange(event: Event) {
+    const files = (event.target as HTMLInputElement).files;
+    console.log(files);
+  }
+
 }
